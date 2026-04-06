@@ -1,8 +1,11 @@
 1. What are you trying to do?
+
 -> I am going to design a custom MAC hardware unit optimized for 8-bit integer math instead of standard 32-bit floating-point math, specifically for neural network inference.
 
 2. How is it done today, and what are the limits of current practice?
+ 
 -> Most processors execute AI inference using FP32 arithmetic. Each weight and activation requires 4 bytes of storage, placing heavy demand on memory bandwidth. On edge and embedded devices, DRAM accesses dominate energy consumption, often costing 100x more energy per access than a single arithmetic operation. This makes FP32-based inference impractical for battery-powered hardware such as mobile phones, wearables, and IoT devices.
 
 3. What is new in your approach and why do you think it will be successful?
+   
 -> My approach explores the micro-architectural trade-offs of a custom INT8 MAC unit by designing it from scratch and comparing it against a baseline FP32 MAC. I reduce the operand width from 32 bits to 8 bits, which directly cuts the memory bandwidth demand by 4x, meaning my design makes 4x fewer DRAM accesses compared to FP32. Since DRAM accesses dominate energy on edge devices as identified above, this directly attacks the bottleneck. My arithmetic datapath is also simpler, requiring fewer logic gates than a FP32 multiplier, which reduces area and power. My contribution is a detailed PPA (power, performance, area) analysis of this INT8 MAC datapath. Neural networks tolerate INT8 quantization with under 1% accuracy loss on standard benchmarks, which gives me confidence that the precision trade-off is acceptable in practice.
