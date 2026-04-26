@@ -1,0 +1,71 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/SPRING_2026/ECE 510/codefest/cf04/hdl
+T_opt
+!s110 1777179184
+V_CCTh?IF;3fQFe0JJJRjX0
+04 6 4 work mac_tb fast 0
+=1-14cb198683e3-69ed9a2f-35f-7808
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+R0
+vmac
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1777179712
+!i10b 1
+!s100 Y13R6_E]7bd9GNPom^nin2
+Ij0<jJEH_18iNzfe^]HhPG1
+S1
+R0
+w1777178426
+8mac_correct.sv
+Fmac_correct.sv
+!i122 6
+L0 5 16
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1777179712.000000
+!s107 mac_tb.sv|mac_correct.sv|
+Z7 !s90 -reportprogress|300|-sv|mac_correct.sv|mac_tb.sv|
+!i113 0
+Z8 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vmac_tb
+R2
+R3
+!i10b 1
+!s100 ao5cRN^A@W4?0UG=I3S6L0
+IAd@Sf9@Ek21h2anz1D7521
+S1
+R0
+w1777178725
+8mac_tb.sv
+Fmac_tb.sv
+!i122 6
+L0 3 31
+R4
+R5
+r1
+!s85 0
+31
+R6
+Z9 !s107 mac_tb.sv|mac_correct.sv|
+R7
+!i113 0
+R8
+R1

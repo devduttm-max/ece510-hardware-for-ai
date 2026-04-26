@@ -1,0 +1,20 @@
+// LLM A: Claude Sonnet 4.6
+// MAC unit - synthesizable SystemVerilog
+// Behavior: accumulates a*b on each rising clock edge, resets to 0 on rst
+
+module mac (
+    input  logic        clk,
+    input  logic        rst,
+    input  logic signed [7:0]  a,
+    input  logic signed [7:0]  b,
+    output logic signed [31:0] out
+);
+
+    always_ff @(posedge clk) begin
+        if (rst)
+            out <= 32'sd0;
+        else
+            out <= out + 32'(signed'(a * b));
+    end
+
+endmodule

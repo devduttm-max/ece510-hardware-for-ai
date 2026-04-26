@@ -1,0 +1,11 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1777182012" />
+    <testcase name="test_reset" classname="test_mac" file="D:\SPRING_2026\ECE 510\codefest\cf04\cocotb_mac\test_mac.py" lineno="59" time="0.0006287097930908203" sim_time_ns="20.001" ratio_time="31812.769929465303" />
+    <testcase name="test_single_accumulation" classname="test_mac" file="D:\SPRING_2026\ECE 510\codefest\cf04\cocotb_mac\test_mac.py" lineno="69" time="0.0004527568817138672" sim_time_ns="40.001000000000005" ratio_time="88349.84428857295" />
+    <testcase name="test_accumulation_sequence" classname="test_mac" file="D:\SPRING_2026\ECE 510\codefest\cf04\cocotb_mac\test_mac.py" lineno="85" time="0.0007054805755615234" sim_time_ns="80.001" ratio_time="113399.29513484286" />
+    <testcase name="test_negative_inputs" classname="test_mac" file="D:\SPRING_2026\ECE 510\codefest\cf04\cocotb_mac\test_mac.py" lineno="107" time="0.00044918060302734375" sim_time_ns="50.001000000000005" ratio_time="111316.02670063695" />
+    <testcase name="test_reset_mid_accumulation" classname="test_mac" file="D:\SPRING_2026\ECE 510\codefest\cf04\cocotb_mac\test_mac.py" lineno="130" time="0.0005223751068115234" sim_time_ns="60.000999999999976" ratio_time="114861.90520492921" />
+    <testcase name="test_max_positive" classname="test_mac" file="D:\SPRING_2026\ECE 510\codefest\cf04\cocotb_mac\test_mac.py" lineno="154" time="0.00039076805114746094" sim_time_ns="40.00100000000003" ratio_time="102365.07279072613" />
+  </testsuite>
+</testsuites>
