@@ -50,5 +50,3 @@ sufficient headroom.
 32-bit signed accumulator to prevent overflow during dot product accumulation.
 
 ---
-
-## Repository structure
