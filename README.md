@@ -20,9 +20,35 @@ Modern AI inference on edge devices is bottlenecked by the cost of 32-bit floati
 
 ## Languages and tools
 
-- Python — model profiling and workload analysis
+- Python — model profiling, workload analysis, cocotb testbenches
 - PyTorch — ResNet-18 profiling via torchinfo
+- SystemVerilog — INT8 MAC unit HDL implementation
+- cocotb — hardware simulation and verification framework
+- Icarus Verilog — open-source RTL simulator
+- QuestaSim — industry-standard RTL simulator
+- CUDA — GPU kernel implementation (CF3)
 - Markdown — documentation and analysis write-ups
 - Git / GitHub — version control and submission
 
 ---
+
+## Project HDL module
+
+The INT8 MAC compute core is implemented in `project/hdl/int8_mac_core.sv`.
+
+**What the module does:** Accumulates signed 8-bit integer multiply-accumulate
+operations into a 32-bit register. On each clock edge, when enabled, it computes
+activation × weight and adds the result to the running accumulator. Reset clears
+the accumulator to zero.
+
+**Interface:** AXI4 Stream (128-bit, 200 MHz) — selected based on M1 arithmetic
+intensity analysis showing 2 GB/s bandwidth requirement at 1 billion MACs/second
+target throughput. AXI4 Stream at 128-bit width delivers 3.2 GB/s, providing
+sufficient headroom.
+
+**Precision:** INT8 (8-bit signed integers) for both activation and weight inputs,
+32-bit signed accumulator to prevent overflow during dot product accumulation.
+
+---
+
+## Repository structure
