@@ -1,0 +1,37 @@
+# End time: 00:39:02 on May 02,2026, Elapsed time: 0:02:34
+# Errors: 0, Warnings: 0
+# vsim -c tb_interface -do "run -all; quit" -l sim/interface_run.log 
+# Start time: 00:39:03 on May 02,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.tb_interface(fast)
+# run -all
+# === interface_mod testbench ===
+# 
+# -- Test 1: Reset state --
+#   [PASS] s_axis_tready == 0 during reset
+#   [PASS] m_axis_tvalid == 0 during reset
+#   [PASS] m_axis_tdata == 0 during reset
+# 
+# -- Test 2: Single write transaction (3 x 4 = 12) --
+#   [PASS] s_axis_tready == 1 after reset
+#   [PASS] m_axis_tvalid == 1
+#   [PASS] m_axis_tlast == 1 (propagated)
+#   [PASS] m_axis_tdata == 12 after one beat
+# 
+# -- Test 3: Multi-beat stream (3 x [2 x 5]) -> acc=30 --
+#   [PASS] m_axis_tdata == 30 after 3 beats
+# 
+# -- Test 4: Negative inputs (-5 x 2 = -10) --
+#   [PASS] m_axis_tdata == -10 (negative inputs)
+# 
+# -- Test 5: Backpressure (m_axis_tready=0) --
+#   [PASS] s_axis_tready stays 1 (core not blocked by downstream)
+# 
+# === Results: 10/10 PASS ===
+# ALL TESTS PASSED
+# ** Note: $finish    : tb/tb_interface.sv(198)
+#    Time: 186 ns  Iteration: 0  Instance: /tb_interface
+# 1
+# Break at tb/tb_interface.sv line 198
+#  quit

@@ -1,0 +1,62 @@
+# End time: 00:36:27 on May 02,2026, Elapsed time: 0:12:57
+# Errors: 0, Warnings: 0
+# vsim -c tb_compute_core -do "run -all; quit" -l sim/compute_core_run.log 
+# Start time: 00:36:28 on May 02,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_compute_core(fast)
+# run -all
+# === compute_core testbench ===
+# 
+# -- Test 1: Reset clears accumulator --
+#   [PASS] acc_out == 0 after reset
+#   [PASS] valid_out == 0 after reset
+# 
+# -- Test 2: Basic MAC (3 x 4 = 12) --
+#   [PASS] acc_out == 12
+#   [PASS] valid_out == 1
+# 
+# -- Test 3: Accumulation over 3 cycles --
+#   [PASS] acc_out == 24 (cycle 2)
+#   [PASS] acc_out == 36 (cycle 3)
+# 
+# -- Test 4: Enable gating (en=0) --
+#   [PASS] acc_out unchanged when en=0
+# 
+# -- Test 5: Negative inputs (-5 x 2) --
+#   [PASS] acc_out == -10 (-5 x 2)
+#   [PASS] acc_out == -20 (-10 + -10)
+# 
+# -- Test 6: Negative x Negative (-8 x -8 = 64) --
+#   [PASS] acc_out == 64 (-8 x -8)
+# 
+# -- Test 7: Max positive INT8 (127 x 127 = 16129) --
+#   [PASS] acc_out == 16129 (127 x 127)
+# 
+# -- Test 8: Done signal pulses after reset --
+#   [PASS] done pulses one cycle after rst falls
+#   [PASS] done deasserts after one cycle
+# 
+# -- Test 9: valid_in gating --
+#   [PASS] acc_out == 0 when valid_in=0
+# 
+# === Results: 14/14 PASS ===
+# ALL TESTS PASSED
+# ** Note: $finish    : tb/tb_compute_core.sv(188)
+#    Time: 176 ns  Iteration: 0  Instance: /tb_compute_core
+# 1
+# Break at tb/tb_compute_core.sv line 188
+#  quit
+vlog -sv rtl/compute_core.sv rtl/interface.sv tb/tb_interface.sv
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 00:39:00 on May 02,2026
+# vlog -reportprogress 300 -sv rtl/compute_core.sv rtl/interface.sv tb/tb_interface.sv 
+# -- Compiling module compute_core
+# -- Compiling module interface_mod
+# -- Compiling module tb_interface
+# 
+# Top level modules:
+# 	tb_interface
+# End time: 00:39:00 on May 02,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -c tb_interface -do "run -all; quit" -l sim/interface_run.log
