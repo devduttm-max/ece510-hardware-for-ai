@@ -1,0 +1,31 @@
+# vsim -c crossbar_tb -do "run -all; quit" -l crossbar_sim.log 
+# Start time: 21:20:13 on May 09,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.crossbar_tb(fast)
+# run -all
+# === crossbar_mac testbench ===
+# 
+# -- Test: input=[10,20,30,40] --
+# Expected: out0=-40, out1=0, out2=-20, out3=-20
+# Got:      out0=-40, out1=0, out2=-20, out3=-20
+#   [PASS] out0 == -40
+#   [PASS] out1 ==   0
+#   [PASS] out2 == -20
+#   [PASS] out3 == -20
+# 
+# -- Test: reset clears outputs --
+#   [PASS] out0 == 0 after reset
+#   [PASS] out1 == 0 after reset
+#   [PASS] out2 == 0 after reset
+#   [PASS] out3 == 0 after reset
+# 
+# === Results: 8/8 PASS ===
+# ALL TESTS PASSED
+# ** Note: $finish    : crossbar_tb.sv(79)
+#    Time: 56 ns  Iteration: 0  Instance: /crossbar_tb
+# 1
+# Break at crossbar_tb.sv line 79
+#  quit
+# End time: 21:37:14 on May 09,2026, Elapsed time: 0:17:01
+# Errors: 0, Warnings: 0
