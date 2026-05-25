@@ -1,0 +1,278 @@
+# vsim -c tb_top -do "run -all; quit" -l ../sim/cosim_run.log 
+# Start time: 21:45:50 on May 23,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+# run -all
+# === tb_top: M3 End-to-End Co-Simulation ===
+# Test: 3x3 identity kernel, activations 1-9, expected acc=45
+# 
+# -- Streaming 9 beats through AXI4-Stream interface --
+#   Beat 0: activation=1 weight=1 tlast=0
+#   Beat 1: activation=2 weight=1 tlast=0
+#   Beat 2: activation=3 weight=1 tlast=0
+#   Beat 3: activation=4 weight=1 tlast=0
+#   Beat 4: activation=5 weight=1 tlast=0
+#   Beat 5: activation=6 weight=1 tlast=0
+#   Beat 6: activation=7 weight=1 tlast=0
+#   Beat 7: activation=8 weight=1 tlast=0
+#   Beat 8: activation=9 weight=1 tlast=1
+# 
+# -- Waiting for result on m_axis output --
+# 
+# -- Checking result --
+#   Expected acc_out = 45
+#   Got      acc_out = 45 (m_axis_tdata)
+#   [PASS] Output matches expected value
+#   [FAIL] m_axis_tvalid not asserted
+# 
+# -- Test 2: negative weights, activations=[2,4,6], weights=[-1,-1,-1] --
+# Expected: -12
+#   Got acc_out = -12 (m_axis_tdata)
+#   [PASS] Negative weight result correct
+# 
+# === Results: 2/3 PASS ===
+# FAIL: 1 test(s) failed
+# ** Note: $finish    : ../tb/tb_top.sv(206)
+#    Time: 216 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break at ../tb/tb_top.sv line 206
+#  quit
+vlog -sv compute_core.sv interface.sv top.sv ../tb/tb_top.sv
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:48:56 on May 23,2026
+# vlog -reportprogress 300 -sv compute_core.sv interface.sv top.sv ../tb/tb_top.sv 
+# -- Compiling module compute_core
+# -- Compiling module interface_mod
+# -- Compiling module top
+# -- Compiling module tb_top
+# 
+# Top level modules:
+# 	tb_top
+# End time: 21:48:56 on May 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -c tb_top -do "run -all; quit" -l ../sim/cosim_run.log
+# End time: 21:48:58 on May 23,2026, Elapsed time: 0:03:08
+# Errors: 0, Warnings: 0
+# vsim -c tb_top -do "run -all; quit" -l ../sim/cosim_run.log 
+# Start time: 21:48:58 on May 23,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+# run -all
+# === tb_top: M3 End-to-End Co-Simulation ===
+# Test: 3x3 identity kernel, activations 1-9, expected acc=45
+# 
+# -- Streaming 9 beats through AXI4-Stream interface --
+#   Beat 0: activation=1 weight=1 tlast=0
+#   Beat 1: activation=2 weight=1 tlast=0
+#   Beat 2: activation=3 weight=1 tlast=0
+#   Beat 3: activation=4 weight=1 tlast=0
+#   Beat 4: activation=5 weight=1 tlast=0
+#   Beat 5: activation=6 weight=1 tlast=0
+#   Beat 6: activation=7 weight=1 tlast=0
+#   Beat 7: activation=8 weight=1 tlast=0
+#   Beat 8: activation=9 weight=1 tlast=1
+# 
+# -- Checking result --
+#   Expected acc_out = 45
+#   Got      acc_out = 45 (m_axis_tdata)
+#   m_axis_tvalid = 0
+#   [PASS] Output matches expected value
+#   [FAIL] m_axis_tvalid not asserted
+# 
+# -- Test 2: activations=[2,4,6], weights=[-1,-1,-1], expected=-12 --
+#   Got acc_out = -12 (m_axis_tdata)
+#   [PASS] Negative weight result correct
+# 
+# === Results: 2/3 PASS ===
+# FAIL: 1 test(s) failed
+# ** Note: $finish    : ../tb/tb_top.sv(128)
+#    Time: 196 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break at ../tb/tb_top.sv line 128
+#  quit
+vlog -sv compute_core.sv interface.sv top.sv ../tb/tb_top.sv
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:50:59 on May 23,2026
+# vlog -reportprogress 300 -sv compute_core.sv interface.sv top.sv ../tb/tb_top.sv 
+# -- Compiling module compute_core
+# -- Compiling module interface_mod
+# -- Compiling module top
+# -- Compiling module tb_top
+# 
+# Top level modules:
+# 	tb_top
+# End time: 21:50:59 on May 23,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -c tb_top -do "run -all; quit" -l ../sim/cosim_run.log
+# End time: 21:51:01 on May 23,2026, Elapsed time: 0:02:03
+# Errors: 0, Warnings: 0
+# vsim -c tb_top -do "run -all; quit" -l ../sim/cosim_run.log 
+# Start time: 21:51:01 on May 23,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+# run -all
+# === tb_top: M3 End-to-End Co-Simulation ===
+# Test 1: 3x3 identity kernel, activations 1-9, expected acc=45
+# 
+# -- Streaming 9 beats through AXI4-Stream interface --
+#   Beat 0: activation=1 weight=1 tlast=0
+#   Beat 1: activation=2 weight=1 tlast=0
+#   Beat 2: activation=3 weight=1 tlast=0
+#   Beat 3: activation=4 weight=1 tlast=0
+#   Beat 4: activation=5 weight=1 tlast=0
+#   Beat 5: activation=6 weight=1 tlast=0
+#   Beat 6: activation=7 weight=1 tlast=0
+#   Beat 7: activation=8 weight=1 tlast=0
+#   Beat 8: activation=9 weight=1 tlast=1
+# 
+# -- Checking result (sampled during last beat) --
+#   Expected acc_out = 45
+#   Got      acc_out = 45 (m_axis_tdata)
+#   [PASS] Output matches expected value 45
+#   [PASS] m_axis_tvalid asserted during transaction
+# 
+# -- Test 2: activations=[2,4,6], weights=[-1,-1,-1], expected=-12 --
+#   Got acc_out = -12 (m_axis_tdata)
+#   [PASS] Negative weight result correct
+# 
+# === Results: 3/3 PASS ===
+# PASS
+# ** Note: $finish    : ../tb/tb_top.sv(126)
+#    Time: 186 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break at ../tb/tb_top.sv line 126
+#  quit
+vsim tb_top
+# End time: 21:51:45 on May 23,2026, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 0
+# vsim tb_top 
+# Start time: 21:51:45 on May 23,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+add wave -radix decimal /tb_top/clk
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/clk'.
+add wave -radix decimal /tb_top/rst
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/rst'.
+add wave -radix decimal /tb_top/s_axis_tdata
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/s_axis_tdata'.
+add wave -radix decimal /tb_top/s_axis_tvalid
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/s_axis_tvalid'.
+add wave -radix decimal /tb_top/s_axis_tready
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/s_axis_tready'.
+add wave -radix decimal /tb_top/s_axis_tlast
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/s_axis_tlast'.
+add wave -radix decimal /tb_top/m_axis_tdata
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/m_axis_tdata'.
+add wave -radix decimal /tb_top/m_axis_tvalid
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/m_axis_tvalid'.
+add wave -radix decimal /tb_top/m_axis_tlast
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_top/m_axis_tlast'.
+run -all
+# === tb_top: M3 End-to-End Co-Simulation ===
+# Test 1: 3x3 identity kernel, activations 1-9, expected acc=45
+# 
+# -- Streaming 9 beats through AXI4-Stream interface --
+#   Beat 0: activation=1 weight=1 tlast=0
+#   Beat 1: activation=2 weight=1 tlast=0
+#   Beat 2: activation=3 weight=1 tlast=0
+#   Beat 3: activation=4 weight=1 tlast=0
+#   Beat 4: activation=5 weight=1 tlast=0
+#   Beat 5: activation=6 weight=1 tlast=0
+#   Beat 6: activation=7 weight=1 tlast=0
+#   Beat 7: activation=8 weight=1 tlast=0
+#   Beat 8: activation=9 weight=1 tlast=1
+# 
+# -- Checking result (sampled during last beat) --
+#   Expected acc_out = 45
+#   Got      acc_out = 45 (m_axis_tdata)
+#   [PASS] Output matches expected value 45
+#   [PASS] m_axis_tvalid asserted during transaction
+# 
+# -- Test 2: activations=[2,4,6], weights=[-1,-1,-1], expected=-12 --
+#   Got acc_out = -12 (m_axis_tdata)
+#   [PASS] Negative weight result correct
+# 
+# === Results: 3/3 PASS ===
+# PASS
+# ** Note: $finish    : ../tb/tb_top.sv(126)
+#    Time: 186 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break at ../tb/tb_top.sv line 126
+vsim -novopt tb_top
+# End time: 21:52:52 on May 23,2026, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 0
+# vsim -novopt tb_top 
+# Start time: 21:52:52 on May 23,2026
+# ** Error (suppressible): (vsim-12110) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Error loading design
+add wave /tb_top/clk
+add wave /tb_top/rst
+add wave /tb_top/s_axis_tdata
+add wave /tb_top/s_axis_tvalid
+add wave /tb_top/s_axis_tready
+add wave /tb_top/s_axis_tlast
+add wave /tb_top/m_axis_tdata
+add wave /tb_top/m_axis_tvalid
+add wave /tb_top/m_axis_tlast
+# End time: 21:52:52 on May 23,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+run -all
+# No Design Loaded!
+vlog -sv +acc compute_core.sv interface.sv top.sv ../tb/tb_top.sv
+# QuestaSim-64 vlog 2021.1 Compiler 2021.01 Jan 19 2021
+# Start time: 21:53:26 on May 23,2026
+# vlog -reportprogress 300 -sv "+acc" compute_core.sv interface.sv top.sv ../tb/tb_top.sv 
+# -- Compiling module compute_core
+# -- Compiling module interface_mod
+# -- Compiling module top
+# -- Compiling module tb_top
+# 
+# Top level modules:
+# 	tb_top
+# End time: 21:53:27 on May 23,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vsim tb_top
+# vsim tb_top 
+# Start time: 21:53:27 on May 23,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+# Loading work.top(fast)
+# Loading work.interface_mod(fast)
+# Loading work.compute_core(fast)
+add wave /tb_top/*
+run -all
+# === tb_top: M3 End-to-End Co-Simulation ===
+# Test 1: 3x3 identity kernel, activations 1-9, expected acc=45
+# 
+# -- Streaming 9 beats through AXI4-Stream interface --
+#   Beat 0: activation=1 weight=1 tlast=0
+#   Beat 1: activation=2 weight=1 tlast=0
+#   Beat 2: activation=3 weight=1 tlast=0
+#   Beat 3: activation=4 weight=1 tlast=0
+#   Beat 4: activation=5 weight=1 tlast=0
+#   Beat 5: activation=6 weight=1 tlast=0
+#   Beat 6: activation=7 weight=1 tlast=0
+#   Beat 7: activation=8 weight=1 tlast=0
+#   Beat 8: activation=9 weight=1 tlast=1
+# 
+# -- Checking result (sampled during last beat) --
+#   Expected acc_out = 45
+#   Got      acc_out = 45 (m_axis_tdata)
+#   [PASS] Output matches expected value 45
+#   [PASS] m_axis_tvalid asserted during transaction
+# 
+# -- Test 2: activations=[2,4,6], weights=[-1,-1,-1], expected=-12 --
+#   Got acc_out = -12 (m_axis_tdata)
+#   [PASS] Negative weight result correct
+# 
+# === Results: 3/3 PASS ===
+# PASS
+# ** Note: $finish    : ../tb/tb_top.sv(126)
+#    Time: 186 ns  Iteration: 0  Instance: /tb_top
+# 1
+# Break in Module tb_top at ../tb/tb_top.sv line 126

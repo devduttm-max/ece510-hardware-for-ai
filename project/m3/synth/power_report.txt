@@ -1,0 +1,36 @@
+================================================================================
+Power Report — compute_core
+OpenLane 2 v2.3.1 | sky130A | sky130_fd_sc_hd
+Run: RUN_2026-05-15_18-11-00
+================================================================================
+
+Power estimation was attempted via OpenROAD PSM (IR drop analysis).
+Full switching power estimation requires a VCD activity file which was not
+available for this run. The IR drop analysis provides supply current estimates
+at the nominal corner (tt_025C_1v80, 1.8V).
+
+IR Drop Analysis Results (nom_tt_025C_1v80):
+  Supply voltage (VPWR):       1.8000 V
+  Worst-case VPWR drop:        2.77 mV
+  Average VPWR drop:           0.71 mV
+  Percentage drop (VPWR):      0.15%
+
+  Ground voltage (VGND):       0.0 V
+  Worst-case VGND rise:        2.09 mV
+  Average VGND rise:           0.62 mV
+  Percentage drop (VGND):      0.12%
+
+Power estimation notes:
+  Full dynamic power estimation requires switching activity from simulation
+  (VCD file). This will be completed for M4 by running a post-synthesis
+  gate-level simulation with VCD dump and feeding it to OpenROAD power
+  analysis. The low IR drop values (< 3 mV) indicate the power grid is
+  well-connected and power delivery is not a concern for this design size.
+
+  Estimated static leakage power (from sky130_fd_sc_hd library typical values):
+  - 35 flip-flops (dfxtp_1): ~0.5 uW each → ~17.5 uW
+  - ~1,200 combinational cells: ~0.1 uW each → ~120 uW
+  - Estimated total leakage: ~140 uW
+
+  Full dynamic power estimate target for M4: < 5 mW at 100 MHz, 1.8V
+================================================================================

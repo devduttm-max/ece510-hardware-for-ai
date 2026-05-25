@@ -1,0 +1,54 @@
+================================================================================
+Area Report — compute_core
+OpenLane 2 v2.3.1 | sky130A | sky130_fd_sc_hd
+Run: RUN_2026-05-15_18-11-00
+================================================================================
+
+Die Area:
+  Width:  154.775 um
+  Height: 165.495 um
+  Total:  25,614.49 um²
+
+Cell Area Summary (excluding filler and tap cells):
+  Cell Type                       Count       Area (um²)
+  ------------------------------------------------------
+  Multi-Input combinational         989        7,477.17
+  Timing Repair Buffers             181        1,273.72
+  Sequential (dfxtp_1 FF)            35          700.67
+  Clock Buffers                       7          140.13
+  Inverters                          15           56.30
+  Clock Inverter                      1            5.00
+  ------------------------------------------------------
+  Logic subtotal                  1,228        9,652.99
+
+  Fill cells                      1,498       10,274.85
+  Tap cells                         297          371.61
+  ------------------------------------------------------
+  Total (all cells)               3,023       20,299.47
+
+Utilization:
+  Core area:      20,299.47 um²
+  Logic area:      9,224 um² (logic only, post repair)
+  Utilization:    52.9%
+
+Routing:
+  Total wire length:  23,592 um
+  Layer breakdown:
+    met1: 12,167 um
+    met2: 10,409 um
+    met3:    848 um
+    met4:    166 um
+  Total vias: 8,219
+
+Cell count by function (top 10):
+  sky130_fd_sc_hd__a21o_1        86
+  sky130_fd_sc_hd__xnor2_1       80
+  sky130_fd_sc_hd__nor2_1        71
+  sky130_fd_sc_hd__a21oi_1       64
+  sky130_fd_sc_hd__buf_2         52
+  sky130_fd_sc_hd__o211a_1       50
+  sky130_fd_sc_hd__nand3_1       39
+  sky130_fd_sc_hd__dfxtp_1       35  ← all flip-flops
+  sky130_fd_sc_hd__and3_1        48
+  sky130_fd_sc_hd__o21ai_1       42
+================================================================================
