@@ -1,0 +1,37 @@
+metric,platform,value,unit,method,notes
+clock_frequency,sky130A ASIC,100,MHz,synthesis timing closure,nominal corner tt_025C_1v80 WNS=+2.48ns
+clock_frequency_ss,sky130A ASIC,65,MHz,synthesis timing extrapolation,estimated safe frequency at ss_100C_1v60 corner
+cycles_per_invocation,sky130A ASIC,9,cycles,RTL simulation,one MAC per cycle 3x3 kernel 9 elements
+latency_per_invocation,sky130A ASIC,0.090,us,derived,9 cycles / 100 MHz
+throughput_per_core,sky130A ASIC,0.200,GFLOP/s,derived,100e6 cycles/s x 2 FLOP/cycle
+throughput_per_core_ss,sky130A ASIC,0.130,GFLOP/s,derived,65 MHz x 2 FLOP/cycle worst case
+interface_bandwidth,sky130A ASIC,3.2,GB/s,design spec,AXI4-Stream 128-bit at 200 MHz
+arithmetic_intensity_no_reuse,sky130A ASIC,0.82,FLOP/byte,computed,18 FLOPs / 22 bytes (9w+9a+4out)
+arithmetic_intensity_weight_reuse,sky130A ASIC,1.38,FLOP/byte,computed,903168 FLOPs / 652297 bytes (224x224 frame)
+die_area,sky130A ASIC,25614,um2,OpenLane synthesis,154.775 x 165.495 um die
+logic_area,sky130A ASIC,9224,um2,OpenLane synthesis,post timing repair logic cells only
+utilization,sky130A ASIC,52.9,percent,OpenLane synthesis,logic area / core area
+flip_flop_count,sky130A ASIC,35,cells,OpenLane synthesis,dfxtp_1 standard cells
+combinational_cells,sky130A ASIC,989,cells,OpenLane synthesis,multi-input combo cells
+timing_buffers,sky130A ASIC,181,cells,OpenLane synthesis,inserted by resizer for timing repair
+wire_length,sky130A ASIC,23592,um,OpenLane routing,total across met1-met4
+wns_nominal,sky130A ASIC,2.48,ns,OpenLane STA,tt_025C_1v80 setup slack positive
+wns_ss_corner,sky130A ASIC,-1.57,ns,OpenLane STA,ss_100C_1v60 setup violation
+hold_violations,sky130A ASIC,0,count,OpenLane STA,no hold violations any corner
+power_leakage,sky130A ASIC,139,uW,library estimate,sky130_fd_sc_hd typical values
+power_dynamic,sky130A ASIC,267,uW,activity estimate,0.2 switching activity 8.26pF cap
+power_total,sky130A ASIC,406,uW,combined estimate,leakage + dynamic
+energy_per_mac,sky130A ASIC,4.06,pJ,derived,406uW / 100e6 MACs/s
+sw_baseline_time_total,i5-1135G7,0.102,s,cProfile measurement,228 calls Conv2D._im2col total
+sw_baseline_time_per_call,i5-1135G7,0.447,ms,cProfile measurement,0.102s / 228 calls
+sw_baseline_peak_compute,i5-1135G7,268.8,GFLOP/s,published spec,Intel i5-1135G7 FP32 peak
+sw_baseline_memory_bw,i5-1135G7,51.2,GB/s,published spec,Intel i5-1135G7 LPDDR4x
+sw_baseline_arithmetic_intensity,i5-1135G7,1.057,FLOP/byte,M1 profiling,measured roofline operating point
+sw_baseline_measured_perf,i5-1135G7,16.73,GFLOP/s,M1 profiling,measured Conv2D._im2col throughput
+latency_per_16x16_frame,sky130A ASIC,0.023,ms,derived,16x16x9 cycles / 100 MHz
+speedup_latency,sky130A ASIC vs i5-1135G7,19.4,x,derived,0.447ms / 0.023ms per invocation
+mae_int8,sky130A ASIC,0.005148,absolute error,M2 precision analysis,mean absolute error FP32 vs INT8
+max_error_int8,sky130A ASIC,0.009728,absolute error,M2 precision analysis,maximum absolute error
+mac_relative_error,sky130A ASIC,0.26,percent,M2 precision analysis,MAC relative error FP32 vs INT8
+cosim_tests_pass,sky130A ASIC,3,count,QuestaSim tb_top.sv,3/3 tests PASS
+cosim_tests_total,sky130A ASIC,3,count,QuestaSim tb_top.sv,identity kernel + negative weights + valid check

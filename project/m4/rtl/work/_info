@@ -1,0 +1,118 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/SPRING_2026/ECE 510/project/m4/rtl
+T_opt
+!s110 1780558912
+V_34TAN_iZhY8R`NiUH^2e1
+04 6 4 work tb_top fast 0
+=1-14cb198683e3-6a212c40-da-858c
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+vcompute_core
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1780558911
+!i10b 1
+!s100 leQZ:aKo2nA0ohXSiW^Z@0
+IA`DRU8V<9CQcmAYTSbRKQ1
+S1
+R0
+Z4 w1780558880
+8compute_core.sv
+Fcompute_core.sv
+!i122 0
+L0 28 63
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1780558911.000000
+Z8 !s107 ../tb/tb_top.sv|top.sv|interface.sv|compute_core.sv|
+Z9 !s90 -reportprogress|300|-sv|+acc|compute_core.sv|interface.sv|top.sv|../tb/tb_top.sv|
+!i113 0
+Z10 o-sv +acc -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vinterface_mod
+R2
+R3
+!i10b 1
+!s100 YAbn=X=>:X4n80]>gW8=m3
+IP2[:44d=mfHDJ5W6iVTzR2
+S1
+R0
+R4
+8interface.sv
+Finterface.sv
+!i122 0
+L0 52 81
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R1
+vtb_top
+R2
+R3
+!i10b 1
+!s100 C3_3n[<Ic3iOkH5BAHFUU1
+IQY741BKd_=fRj:Fk3l^iM1
+S1
+R0
+Z11 w1780558881
+8../tb/tb_top.sv
+F../tb/tb_top.sv
+!i122 0
+L0 3 129
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R1
+vtop
+R2
+R3
+!i10b 1
+!s100 =[I@iH<PD8oJWIT>6SI;d3
+I9`enkOQ[^=B>8e4X;;T9A2
+S1
+R0
+R11
+8top.sv
+Ftop.sv
+!i122 0
+L0 29 41
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 0
+R10
+R1

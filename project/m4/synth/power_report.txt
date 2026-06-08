@@ -1,0 +1,66 @@
+================================================================================
+Power Report — compute_core (top-level: interface_mod + compute_core)
+OpenLane 2 v2.3.1 | sky130A | sky130_fd_sc_hd
+Run: RUN_2026-05-15_18-11-00
+Clock period: 10 ns (100 MHz)
+================================================================================
+
+Power Estimation Attempt
+------------------------
+Full dynamic power estimation requires a VCD switching activity file generated
+from gate-level simulation. A VCD file was not available for this run because
+the co-simulation was performed at RTL level (tb_top.sv driving top.sv) rather
+than at gate-level with back-annotated SDF delays.
+
+The following was attempted:
+1. OpenROAD PSM IR drop analysis was run and completed successfully (included
+   in the OpenLane flow log). It provides supply current distribution but not
+   a full dynamic power breakdown.
+2. VCD generation was attempted via QuestaSim $dumpvars but the gate-level
+   netlist (compute_core.nl.v) requires the sky130_fd_sc_hd liberty models to
+   be mapped in the simulator. The liberty files are available in the OpenLane
+   PDK installation but were not accessible from the local QuestaSim environment
+   on Windows 11 without additional path configuration.
+
+IR Drop Analysis Results (nom_tt_025C_1v80):
+  Supply voltage (VPWR):       1.8000 V
+  Worst-case VPWR drop:        2.77 mV  (0.15%)
+  Average VPWR drop:           0.71 mV  (0.04%)
+  Worst-case VGND rise:        2.09 mV  (0.12%)
+  Average VGND rise:           0.62 mV  (0.03%)
+
+Static Leakage Estimate (from sky130_fd_sc_hd library typical values):
+  Sequential cells (35 × dfxtp_1):    35 × 0.50 µW  =  17.5 µW
+  Combinational cells (~1,200 cells): 1200 × 0.10 µW = 120.0 µW
+  Clock buffers (7 cells):             7 × 0.15 µW  =   1.1 µW
+  Estimated total leakage:                           = 138.6 µW
+
+Dynamic Power Estimate (activity-based approximation):
+  Assumptions:
+    - Average switching activity: 0.20 (20% of nets toggle per cycle)
+    - Supply voltage: 1.8 V
+    - Clock frequency: 100 MHz
+    - Total net capacitance (from SPEF): ~8.2 pF estimated from wire length
+      (23,592 µm at sky130 ~0.35 fF/µm = 8.26 pF)
+
+  Dynamic power = 0.5 × C × V² × f × activity
+               = 0.5 × 8.26e-12 × 1.8² × 100e6 × 0.20
+               = 0.5 × 8.26e-12 × 3.24 × 100e6 × 0.20
+               ≈ 267 µW
+
+  Total estimated power: 267 µW (dynamic) + 139 µW (leakage) ≈ 406 µW
+
+  Energy per MAC operation (at 100 MHz, 1 MAC/cycle):
+    406 µW / 100e6 ops/s = 4.06 pJ/MAC
+
+================================================================================
+Key Numbers Summary:
+  Estimated total power:    ~406 µW at 100 MHz, 1.8V, nom corner
+  Energy per MAC:           ~4.06 pJ/MAC
+  IR drop (VPWR):           2.77 mV worst-case (well within 5% limit)
+  Leakage power:            ~139 µW
+  Dynamic power:            ~267 µW
+
+Note: These are estimates. A measured value requires gate-level simulation
+with VCD activity annotation, which will be the subject of future work.
+================================================================================

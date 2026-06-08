@@ -1,0 +1,43 @@
+================================================================================
+Timing Report — compute_core (top-level: interface_mod + compute_core)
+OpenLane 2 v2.3.1 | sky130A | sky130_fd_sc_hd
+Run: RUN_2026-05-15_18-11-00
+Clock period: 10 ns (100 MHz)
+================================================================================
+
+Static Timing Analysis (Post-PnR, all corners)
+
+Corner                  WNS (ns)    TNS (ns)    Hold Slack    Status
+--------------------------------------------------------------------------------
+nom_tt_025C_1v80        +2.48       0.00        +0.10         PASS
+nom_ff_n40C_1v95        +2.48       0.00        +0.10         PASS
+nom_ss_100C_1v60        -1.57       -18.1       +0.10         FAIL (setup)
+min_tt_025C_1v80        +2.48       0.00        +0.10         PASS
+min_ff_n40C_1v95        +2.48       0.00        +0.10         PASS
+min_ss_100C_1v60        -1.57       -18.1       +0.10         FAIL (setup)
+max_tt_025C_1v80        +2.48       0.00        +0.10         PASS
+max_ff_n40C_1v95        +2.48       0.00        +0.10         PASS
+max_ss_100C_1v60        -1.57       -18.1       +0.10         FAIL (setup)
+
+Summary:
+  Setup violations: ss_100C_1v60 corner only (slow process, 100C, 1.6V)
+  Hold violations:  None in any corner
+  Max slew violations: None
+  Max cap violations:  None
+
+Worst endpoint: _2027_/D (flip-flop D input)
+Timing repair: 200 instances resized, 83 buffers inserted, 7 gates cloned
+               Unable to fully close timing at ss corner (RSZ-0062)
+
+Clock tree:
+  Root buffer:  sky130_fd_sc_hd__clkbuf_16
+  Sink buffer:  sky130_fd_sc_hd__clkbuf_8
+  Clock nets:   6
+  CTS buffers:  7 (5x clkbuf_16, 2x clkbuf_4)
+  Max path depth: 2 levels
+  Average sink wire length: 217.35 um
+
+IR Drop (nom_tt_025C_1v80):
+  VPWR worst-case drop: 2.77 mV (0.15%)
+  VGND worst-case rise: 2.09 mV (0.12%)
+================================================================================
